@@ -1,17 +1,27 @@
 import os
-
 def get_tree_size(path):
     """Return total size of files in given path and subdirs."""
     total = 0
-    files = 0
     for entry in os.scandir(path):
         if entry.is_dir(follow_symlinks=False):
             total += get_tree_size(entry.path)
-            files += 1
         else:
             total += entry.stat(follow_symlinks=False).st_size
     return total
 
+def get_tree_size_and_quantity(path):
+    """Return total size and quantity of files in given path and subdirs."""
+    total_files = [0,0]
+    # total = 0
+    # files = 0
+    for entry in os.scandir(path):
+        if entry.is_dir(follow_symlinks=False):
+            total_files[0] += get_tree_size_and_quantity(entry.path)
+            total_files[1] += 1
+        else:
+            total_files[0] += entry.stat(follow_symlinks=False).st_size
+            total_files[1] += 1
+    return total_files
 
 list_of_fldrs = [
     r"c:\intel"
@@ -34,13 +44,10 @@ list_of_fldrs = [
     # r"z:\03_Work\05_GroundTruth\vlr"
 ]
 
-
-
 for item in list_of_fldrs:
     line = item.split("\\")
     list_of_func = [ line[ len(line)-1].upper() ]
     #print(list_of_func)
-    print('{0:4}=> {1} {2}'.format(list_of_func[0], get_tree_size(item)/1048576,' MB' ))
-
-
+    #print('{0:4}=> {1} {2}'.format(list_of_func[0], get_tree_size(item)/1048576,' MB' ))
+    print('{0:4}=> {1} {2}'.format(list_of_func[0], get_tree_size_and_quantity(item) , ' MB'))
 #https://www.python.org/dev/peps/pep-0471/
