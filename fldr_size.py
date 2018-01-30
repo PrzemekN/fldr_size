@@ -11,23 +11,7 @@ def get_tree_size(path):
 
 
 list_of_fldrs = [
-    r"z:\03_Work\05_GroundTruth\FS",
-    r"z:\03_Work\05_GroundTruth\LA",
-    r"z:\03_Work\05_GroundTruth\LbD",
-    r"z:\03_Work\05_GroundTruth\LD",
-    r"z:\03_Work\05_GroundTruth\ObsD",
-    r"z:\03_Work\05_GroundTruth\PED",
-    r"z:\03_Work\05_GroundTruth\ped3",
-    r"z:\03_Work\05_GroundTruth\ppp",
-    r"z:\03_Work\05_GroundTruth\sl",
-    r"z:\03_Work\05_GroundTruth\tld",
-    r"z:\03_Work\05_GroundTruth\tsr",
-    r"z:\03_Work\05_GroundTruth\ucr",
-    r"z:\03_Work\05_GroundTruth\ved",
-    r"z:\03_Work\05_GroundTruth\ved3",
-    r"z:\03_Work\05_GroundTruth\vlb",
-    r"z:\03_Work\05_GroundTruth\vlm",
-    r"z:\03_Work\05_GroundTruth\vlr"
+    r"c:\sciezka\jakis\cos"
 ]
 
 
